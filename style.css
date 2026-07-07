@@ -136,6 +136,130 @@ nav a.active::after {
     width: 100%;
 }
 
+.weather-widget {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all .3s ease;
+}
+
+.weather-main:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0,188,212,.25);
+}
+
+#weather-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.weather-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    width: 300px;
+    background: rgba(31,31,31,.98);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.45);
+    z-index: 2000;
+}
+
+.weather-widget.open .weather-dropdown {
+    display: block;
+}
+
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+}
+
+.weather-header h3 {
+    font-size: 18px;
+}
+
+.weather-header p {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.weather-source {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--secondary-text);
+    font-style: italic;
+}
+
+.weather-current {
+    text-align: right;
+}
+
+.weather-current strong {
+    font-size: 32px;
+}
+
+.weather-current span {
+    display: block;
+    color: var(--secondary-text);
+    font-size: 13px;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.weather-details div {
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.weather-details i {
+    color: var(--primary-color);
+}
+
+.weather-updated {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    color: var(--secondary-text);
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#weather-widget:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 188, 212, .25);
+}
+
+#weather-widget i {
+    color: var(--primary-color);
+}
+
 /* ==========================
    Hero Section
 ========================== */
@@ -688,6 +812,10 @@ footer {
     .project-card,
     .about-highlights {
         padding: 24px;
+    }
+
+    #weather-widget {
+        display: none;
     }
 
 }
